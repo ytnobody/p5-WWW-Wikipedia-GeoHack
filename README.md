@@ -17,13 +17,13 @@ WWW::Wikipedia::GeoHack is a scraper for fetching coordinates data from Wikipedi
 
 # ATTRIBUTES
 
-> \- lang
->
-> A specifier of wikipedia's language.
->
-> \- agent 
->
-> An instance of LWP::UserAgent. 
+- lang
+
+    A specifier of wikipedia's language.
+
+- agent 
+
+    An instance of LWP::UserAgent. 
 
 # METHODS
 

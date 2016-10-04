@@ -59,5 +59,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/ytnobody/p5-WWW-Wikipedia-GeoHack/issues"
+      },
+      "homepage" : "https://github.com/ytnobody/p5-WWW-Wikipedia-GeoHack",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/ytnobody/p5-WWW-Wikipedia-GeoHack.git",
+         "web" : "https://github.com/ytnobody/p5-WWW-Wikipedia-GeoHack"
+      }
+   },
    "version" : "0.01"
 }

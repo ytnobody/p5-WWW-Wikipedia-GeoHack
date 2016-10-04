@@ -99,11 +99,11 @@ WWW::Wikipedia::GeoHack is a scraper for fetching coordinates data from Wikipedi
 
 =over 4 
 
-- lang
+=item lang
 
 A specifier of wikipedia's language.
 
-- agent 
+=item agent 
 
 An instance of LWP::UserAgent. 
 

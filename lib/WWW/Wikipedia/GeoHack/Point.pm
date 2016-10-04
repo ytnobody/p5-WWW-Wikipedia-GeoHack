@@ -69,13 +69,13 @@ WWW::Wikipedia::GeoHack::Point is a coordinates data class of WWW::Wikipedia::Ge
 
 =over 4 
 
-- pagename
+=item pagename
 
-- region
+=item region
 
-- language
+=item language
 
-- type  
+=item type  
 
 =back 
 
