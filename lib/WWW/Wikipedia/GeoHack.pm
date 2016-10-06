@@ -43,7 +43,7 @@ sub _parse_params {
     my $row  = +{split /(?:=|&amp;)/, uri_unescape($str)};
     my $params = delete $row->{params};
     my @part = map {s/\A_//; $_} split /(?:_N_|_E)/, $params, 3;
-    my @opts = split /[:_]/, $part[2];
+    my @opts = split /[:_]/, ($part[2] || '');
     if (scalar(@opts) % 2) {
         push @opts, '';
     }
