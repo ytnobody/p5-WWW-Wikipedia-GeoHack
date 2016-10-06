@@ -15,6 +15,7 @@ sub new {
             scalar(@{$param{$key}}) == 2 ? [decimal2dm(@{$param{$key}})] :
             $param{$key}
         ;
+        $param{$key} = [map {0+ $_} @{$param{$key}}];
     }
     $param{type} ||= '';
     bless {%param}, $class; 

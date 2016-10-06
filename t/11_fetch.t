@@ -34,4 +34,18 @@ subtest 'Shibuya Hikarie' => sub {
     is_deeply $lons, [139, 42, 12.3]; 
 };
 
+subtest 'Sophia Univ.' => sub {
+    my @points = $geo->fetch('上智大学');
+    is scalar(@points), 1;
+    my $p = $points[0];
+    isa_ok $p, 'WWW::Wikipedia::GeoHack::Point';
+    is $p->pagename, '上智大学';
+    my ($lat, $lon) = $p->decimal;
+    is $lat, '35.6833333333333';                                                                                              
+    is $lon, '139.7325';
+    my ($lats, $lons) = $p->dms;
+    is_deeply $lats, [35, 41, 0];
+    is_deeply $lons, [139, 43, 57];     
+};
+
 done_testing;
