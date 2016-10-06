@@ -47,11 +47,13 @@ sub _parse_params {
     if (scalar(@opts) % 2) {
         push @opts, '';
     }
+    my @latitude  = map {m/([0-9\.]+)/; $1;} split /_/, $part[0], 3;
+    my @longitude = map {m/([0-9\.]+)/; $1;} split /_/, $part[1], 3;
     my $data = Data::Recursive::Encode->decode_utf8({
         %$row,
         @opts,
-        latitude   => [map {m/([0-9\.]+)/; $1;} split /_/, $part[0], 3],
-        longitude  => [map {m/([0-9\.]+)/; $1;} split /_/, $part[1], 3],
+        latitude   => [@latitude],
+        longitude  => [@longitude],
     });
     WWW::Wikipedia::GeoHack::Point->new(%$data);
 }

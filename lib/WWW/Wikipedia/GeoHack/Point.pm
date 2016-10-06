@@ -10,12 +10,15 @@ use Class::Accessor::Lite (
 sub new {
     my ($class, %param) = @_;
     for my $key (qw/latitude longitude/) {
-        $param{$key} = 
-            scalar(@{$param{$key}}) == 1 ? [decimal2dms(@{$param{$key}})] :
-            scalar(@{$param{$key}}) == 2 ? [decimal2dm(@{$param{$key}})] :
-            $param{$key}
-        ;
-        $param{$key} = [map {0+ $_} @{$param{$key}}];
+        my @dms = grep {defined $_} @{$param{$key}};
+        my $dmsparts = scalar(@dms); 
+        $param{$key} = [
+            map {0+ $_} 
+            $dmsparts == 1 ? (decimal2dms($dms[0]))[0..2] : 
+            $dmsparts == 2 ? (@dms, 0) :
+            @dms[0..2]
+        ];
+        
     }
     $param{type} ||= '';
     bless {%param}, $class; 
